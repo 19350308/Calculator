@@ -1,6 +1,19 @@
+import {useState} from 'react';
 import './App.css'
 
+const buttonsClasses= 'btn btn-primary w-75';
+
 function App() {
+  const [screen, setScreen] = useState('0')
+
+  const handleButtonClick = () => {
+    if (screen === '0'){
+      setScreen(9)
+    }else{
+      setScreen (`${screen}9`)
+    }
+  }
+
   return (
     <div className='app'>
     <h1>Calculator</h1>
@@ -9,7 +22,7 @@ function App() {
       <tr>
         <td colSpan={4}
         style={{border:"1px solid black",
-        textAlign: "end"}}><h2>0</h2>
+        textAlign: "end"}}><h2>{screen}</h2>
         </td>
 
       </tr>
@@ -18,22 +31,22 @@ function App() {
         <td> 
         <button
         type= "button"
-         className='btn btn-primary w-75'> C </button> 
+         className={buttonsClasses}> C </button> 
         </td>
         <td>
         <button
         type= "button" 
-        className='btn btn-primary w-75'> / </button> 
+        className={buttonsClasses}> / </button> 
         </td>
         <td> 
         <button
         type= "button" 
-        className='btn btn-primary w-75'> * </button> 
+        className={buttonsClasses}> * </button> 
         </td>
         <td> 
         <button
         type= "button" 
-        className='btn btn-primary w-75'> - </button> 
+        className={buttonsClasses}> - </button> 
         </td>
       </tr>
       {/*Third row */}
@@ -41,21 +54,22 @@ function App() {
       <td> 
         <button
         type= "button"
-         className='btn btn-primary w-75'> 7 </button> 
+         className={buttonsClasses}> 7 </button> 
         </td>
         <td> 
         <button
         type= "button"
-         className='btn btn-primary w-75'> 8 </button> 
+         className={buttonsClasses}> 8 </button> 
         </td>
         <td> 
         <button
         type= "button"
-         className='btn btn-primary w-75'> 9 </button> 
+         className={buttonsClasses}
+         onClick={handleButtonClick}> 9 </button> 
         </td>
         <td rowSpan={2}><button
         type= "button"
-         className='btn btn-primary w-75'
+         className={buttonsClasses}
          style={{height: "80px"}}> + </button>
           </td>
       </tr>
@@ -64,17 +78,17 @@ function App() {
       <td> 
         <button
         type= "button"
-         className='btn btn-primary w-75'> 4 </button> 
+         className={buttonsClasses}> 4 </button> 
         </td>
         <td> 
         <button
         type= "button"
-         className='btn btn-primary w-75'> 5 </button> 
+         className={buttonsClasses}> 5 </button> 
         </td>
         <td> 
         <button
         type= "button"
-         className='btn btn-primary w-75'> 6 </button> 
+         className={buttonsClasses}> 6 </button> 
         </td>
       </tr>
        {/*Fifth row */}
@@ -82,37 +96,37 @@ function App() {
       <td> 
         <button
         type= "button"
-         className='btn btn-primary w-75'> 1 </button> 
+         className={buttonsClasses}> 1 </button> 
         </td>
         <td> 
         <button
         type= "button"
-         className='btn btn-primary w-75'> 2 </button> 
+         className={buttonsClasses}> 2 </button> 
         </td>
         <td> 
         <button
         type= "button"
-         className='btn btn-primary w-75'> 3 </button> 
+         className={buttonsClasses}> 3 </button> 
         </td>
         <td rowSpan={2}><button
         type= "button"
-         className='btn btn-primary w-75'
+         className={buttonsClasses}
          style={{height: "80px"}}> = </button></td>
       </tr>
        {/*Sixth row */}
       <tr>
         <td>
           <button type="button"
-          className='btn btn-primary w-75'
+          className={buttonsClasses}
           >DEL</button>
         </td>
         <td>
           <button type="button"
-          className='btn btn-primary w-75'> 0 </button></td>
+          className={buttonsClasses}> 0 </button></td>
         <td> 
         <button
         type= "button"
-         className='btn btn-primary w-75'> . </button> 
+         className={buttonsClasses}> . </button> 
         </td>
       </tr>
     </table>
